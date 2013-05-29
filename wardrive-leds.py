@@ -18,6 +18,6 @@ else:
         gps = subprocess.Popen(['ps -ef | grep gpsd'],
         stdout = subprocess.PIPE, shell=True)#Assigns the output from the grep to the gps variable
         (output, error) = gps.communicate()
-        if 'gpsd' in output: GPIO.output(17, False) #Turn on GPSD LED
+        if 'gpsd -F /var/run/gpsd.sock' in output: GPIO.output(17, False) #Turn on GPSD LED
         else:
               GPIO.output(17, True) #Turn off GPSD LED 
