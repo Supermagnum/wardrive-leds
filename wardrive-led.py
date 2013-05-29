@@ -17,7 +17,6 @@ while 1 == 1:
         if 'gpsd -F /var/run/gpsd.sock' in output: GPIO.output(17, True) #Turn on GPSD LED
         else:
                 GPIO.output(17, False) #Turn off GPSD LED
-while 1 == 1:
         kismet = subprocess.Popen(['ps -ef | grep gpsd'],
         stdout = subprocess.PIPE, shell=True) #Assigns the output from the grep to the kismet variable
         (output, error) =kismet.communicate()
